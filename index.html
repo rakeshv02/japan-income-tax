@@ -40,6 +40,9 @@ h1{font-size:clamp(20px,4vw,30px);font-weight:800;margin-bottom:8px}
 .field label{display:block;font-size:11px;color:#94a3b8;margin-bottom:4px;font-weight:600;text-transform:uppercase;letter-spacing:.04em}
 .field input,.field select{width:100%;background:#0f172a;border:1px solid #475569;border-radius:8px;padding:10px 12px;color:#f1f5f9;font-size:15px;outline:none}
 .field input:focus,.field select:focus{border-color:#6366f1}
+.mode-toggle{display:flex;gap:8px;margin-bottom:16px;background:#0f172a;border-radius:10px;padding:4px}
+.mode-btn{flex:1;background:transparent;border:none;border-radius:8px;padding:9px 12px;font-size:13px;font-weight:700;color:#94a3b8;cursor:pointer}
+.mode-btn.active{background:#6366f1;color:#fff}
 .btn{width:100%;background:#6366f1;color:#fff;border:none;border-radius:10px;padding:13px;font-size:16px;font-weight:700;cursor:pointer;margin-top:6px}
 .btn:hover{background:#4f46e5}
 .result-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:16px}
@@ -80,11 +83,36 @@ h1{font-size:clamp(20px,4vw,30px);font-weight:800;margin-bottom:8px}
 
   <div class="card">
     <h2>Your Details</h2>
-    <div class="grid">
+    <div class="mode-toggle" role="tablist" aria-label="Salary input mode">
+      <button type="button" id="mode-annual" class="mode-btn active" onclick="setMode('annual')">Annual total</button>
+      <button type="button" id="mode-bonus" class="mode-btn" onclick="setMode('bonus')">Monthly + bonus</button>
+    </div>
+    <div class="grid" id="annual-inputs">
       <div class="field">
         <label for="salary">Annual gross salary (¥)</label>
         <input type="number" id="salary" value="6000000" min="0" step="100000"/>
       </div>
+    </div>
+    <div class="grid" id="bonus-inputs" style="display:none">
+      <div class="field">
+        <label for="monthly-salary">Monthly gross salary (¥)</label>
+        <input type="number" id="monthly-salary" value="400000" min="0" step="10000"/>
+      </div>
+      <div class="field">
+        <label for="bonus-amount">Bonus per payment (¥)</label>
+        <input type="number" id="bonus-amount" value="600000" min="0" step="50000"/>
+      </div>
+      <div class="field">
+        <label for="bonus-count">Bonuses per year</label>
+        <select id="bonus-count">
+          <option value="0">None</option>
+          <option value="1">1 (e.g. summer)</option>
+          <option value="2" selected>2 (summer + winter)</option>
+          <option value="3">3</option>
+        </select>
+      </div>
+    </div>
+    <div class="grid" style="margin-top:12px">
       <div class="field">
         <label for="age">Age group</label>
         <select id="age">
@@ -102,7 +130,11 @@ h1{font-size:clamp(20px,4vw,30px);font-weight:800;margin-bottom:8px}
     <h2>Results</h2>
     <div class="result-grid">
       <div class="result-box"><div class="val" id="r-takehome">—</div><div class="lbl">Annual take-home</div></div>
-      <div class="result-box"><div class="val" id="r-monthly">—</div><div class="lbl">Monthly take-home</div></div>
+      <div class="result-box"><div class="val" id="r-monthly">—</div><div class="lbl" id="r-monthly-lbl">Monthly take-home</div></div>
+    </div>
+    <div class="result-grid" id="bonus-result-grid" style="display:none">
+      <div class="result-box"><div class="val" id="r-bonus-net">—</div><div class="lbl">Take-home per bonus</div></div>
+      <div class="result-box"><div class="val" id="r-bonus-month">—</div><div class="lbl">Bonus-month total take-home</div></div>
     </div>
     <div class="row"><span class="lbl">Gross salary</span><span><span class="val" id="d-gross">—</span></span></div>
     <div class="row"><span class="lbl">National income tax</span><span><span class="val" style="color:#f87171" id="d-income">—</span><span class="pctv" id="p-income"></span></span></div>
@@ -117,7 +149,7 @@ h1{font-size:clamp(20px,4vw,30px);font-weight:800;margin-bottom:8px}
     <div class="row"><span class="lbl" style="color:#f1f5f9;font-weight:700">Take-home pay</span><span><span class="val" style="color:#34d399" id="d-net">—</span><span class="pctv" id="p-net"></span></span></div>
   </div>
 
-  <div class="note"><strong>Note:</strong> This is an estimate using 2025 national rates, the ¥580,000 basic deduction, the revised employment income deduction and typical Tokyo (Kyokai Kenpo) social insurance premiums. Actual amounts vary by prefecture, health insurer, dependents and personal deductions. Resident tax is billed on the previous year's income. Consult a zeirishi (licensed tax accountant) for personalised advice.</div>
+  <div class="note"><strong>Note:</strong> This is an estimate using 2025 national rates, the ¥580,000 basic deduction, the revised employment income deduction and typical Tokyo (Kyokai Kenpo) social insurance premiums. Actual amounts vary by prefecture, health insurer, dependents and personal deductions. Resident tax is billed on the previous year's income. In monthly + bonus mode, social insurance on bonuses uses the separate bonus caps (health/care: ¥5.73M per year; pension: ¥1.5M per payment), matching how real payslips are calculated. Consult a zeirishi (licensed tax accountant) for personalised advice.</div>
 </div>
 
 <div class="seo">
@@ -227,18 +259,60 @@ function nationalTax(taxable){
   return taxable*0.45-4796000;
 }
 
-function calc(){
-  var gross=parseFloat(document.getElementById('salary').value)||0;
-  var age=document.getElementById('age').value;
+var inputMode='annual';
+function setMode(m){
+  inputMode=m;
+  document.getElementById('mode-annual').classList.toggle('active',m==='annual');
+  document.getElementById('mode-bonus').classList.toggle('active',m==='bonus');
+  document.getElementById('annual-inputs').style.display=(m==='annual')?'grid':'none';
+  document.getElementById('bonus-inputs').style.display=(m==='bonus')?'grid':'none';
+  calc();
+}
 
-  // Social insurance (employee share), Tokyo Kyokai Kenpo approximations
-  var healthBase=Math.min(gross,16680000);      // annual standard remuneration cap approx
-  var pensionBase=Math.min(gross,7800000);      // kosei nenkin cap: std monthly ¥650,000
-  var health=healthBase*0.0499;                 // ~9.98%/2
-  var care=(age==='o40')?healthBase*0.008:0;    // kaigo hoken 40–64, ~1.6%/2
-  var pension=(age==='o70')?0:pensionBase*0.0915; // kosei nenkin applies until age 70
-  var emp=gross*0.0055;
-  var social=health+care+pension+emp;
+function calc(){
+  var age=document.getElementById('age').value;
+  var gross,monthlyGross=0,bonusAmt=0,bonusCount=0,annualBonus=0;
+  if(inputMode==='bonus'){
+    monthlyGross=parseFloat(document.getElementById('monthly-salary').value)||0;
+    bonusAmt=parseFloat(document.getElementById('bonus-amount').value)||0;
+    bonusCount=parseInt(document.getElementById('bonus-count').value,10)||0;
+    annualBonus=bonusAmt*bonusCount;
+    gross=monthlyGross*12+annualBonus;
+  }else{
+    gross=parseFloat(document.getElementById('salary').value)||0;
+  }
+
+  // Social insurance (employee share), Tokyo Kyokai Kenpo approximations.
+  // Bonuses have their own caps: health/care bonus base capped at ¥5.73M per year;
+  // pension bonus base capped at ¥1.5M per bonus payment.
+  var health,care,pension,emp,social;
+  var bonusHealth=0,bonusCare=0,bonusPension=0,bonusEmp=0,bonusSocial=0;
+  if(inputMode==='bonus'){
+    var monthlyStd=Math.min(monthlyGross,1390000);            // std monthly remuneration cap
+    var salHealthBase=monthlyStd*12;
+    var salPensionBase=Math.min(monthlyGross,650000)*12;      // kosei nenkin std monthly cap ¥650,000
+    var bonusHealthBase=Math.min(annualBonus,5730000);        // annual bonus cap for health/care
+    var bonusPensionBase=Math.min(bonusAmt,1500000)*bonusCount; // per-payment pension cap ¥1.5M
+    health=salHealthBase*0.0499;
+    care=(age==='o40')?salHealthBase*0.008:0;
+    pension=(age==='o70')?0:salPensionBase*0.0915;
+    bonusHealth=bonusHealthBase*0.0499;
+    bonusCare=(age==='o40')?bonusHealthBase*0.008:0;
+    bonusPension=(age==='o70')?0:bonusPensionBase*0.0915;
+    emp=monthlyGross*12*0.0055;
+    bonusEmp=annualBonus*0.0055;
+    bonusSocial=bonusHealth+bonusCare+bonusPension+bonusEmp;
+    health+=bonusHealth;care+=bonusCare;pension+=bonusPension;emp+=bonusEmp;
+    social=health+care+pension+emp;
+  }else{
+    var healthBase=Math.min(gross,16680000);      // annual standard remuneration cap approx
+    var pensionBase=Math.min(gross,7800000);      // kosei nenkin cap: std monthly ¥650,000
+    health=healthBase*0.0499;                 // ~9.98%/2
+    care=(age==='o40')?healthBase*0.008:0;    // kaigo hoken 40–64, ~1.6%/2
+    pension=(age==='o70')?0:pensionBase*0.0915; // kosei nenkin applies until age 70
+    emp=gross*0.0055;
+    social=health+care+pension+emp;
+  }
 
   // National income tax
   var empDed=employmentDeduction(gross);
@@ -256,7 +330,22 @@ function calc(){
   var net=gross-total;
 
   document.getElementById('r-takehome').textContent=yen(net);
-  document.getElementById('r-monthly').textContent=yen(net/12);
+  if(inputMode==='bonus'&&bonusCount>0){
+    // Allocate income/resident tax proportionally to gross share (approximates payroll withholding)
+    var taxAll=incomeTax+surtax+resident;
+    var salaryShare=gross>0?(monthlyGross*12)/gross:0;
+    var regMonthNet=monthlyGross-(social-bonusSocial)/12-taxAll*salaryShare/12;
+    var perBonusNet=bonusAmt-(bonusCount>0?bonusSocial/bonusCount:0)-(gross>0?taxAll*(annualBonus/gross)/bonusCount:0);
+    document.getElementById('r-monthly').textContent=yen(regMonthNet);
+    document.getElementById('r-monthly-lbl').textContent='Regular-month take-home';
+    document.getElementById('r-bonus-net').textContent=yen(perBonusNet);
+    document.getElementById('r-bonus-month').textContent=yen(regMonthNet+perBonusNet);
+    document.getElementById('bonus-result-grid').style.display='grid';
+  }else{
+    document.getElementById('r-monthly').textContent=yen(net/12);
+    document.getElementById('r-monthly-lbl').textContent='Monthly take-home';
+    document.getElementById('bonus-result-grid').style.display='none';
+  }
   document.getElementById('d-gross').textContent=yen(gross);
   document.getElementById('d-income').textContent=yen(incomeTax);
   document.getElementById('p-income').textContent=pc(incomeTax,gross);
