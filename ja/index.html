@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>年収から手取りを計算 | 所得税・住民税・社会保険料シミュレーター (2026) — Tabutility</title>
+<meta name="description" content="2026年版の日本の手取り額を計算します。所得税・復興特別所得税・住民税・社会保険料を含めて自動計算。登録不要・完全無料のシミュレーターです。"/>
+<meta name="keywords" content="所得税 計算, 手取り 計算, 年収 手取り, 社会保険料 計算, 住民税 計算, 日本 税金 2026, ボーナス 手取り, 給与 シミュレーター"/>
+<link rel="canonical" href="https://japan-income-tax.tabutility.com/ja/"/>
+<meta property="og:title" content="年収から手取りを計算 | 所得税・住民税・社会保険料シミュレーター (2026)"/>
+<meta property="og:description" content="日本の手取り額を計算。所得税・住民税・社会保険料を含めて自動で計算します。無料・登録不要。"/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://japan-income-tax.tabutility.com/ja/"/>
+<meta property="og:site_name" content="Tabutility"/>
+<meta property="og:locale" content="ja_JP"/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="年収から手取りを計算 | 所得税・住民税・社会保険料シミュレーター (2026) — Tabutility"/>
+<meta name="twitter:description" content="日本の手取り額を計算。所得税・住民税・社会保険料を含めて自動計算。無料・登録不要。"/>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🇯🇵</text></svg>"/>
+<meta name="robots" content="index, follow"/>
+<meta name="theme-color" content="#0f172a"/>
+<link rel="alternate" hreflang="en" href="https://japan-income-tax.tabutility.com/"/>
+<link rel="alternate" hreflang="ja" href="https://japan-income-tax.tabutility.com/ja/"/>
+<link rel="alternate" hreflang="x-default" href="https://japan-income-tax.tabutility.com/"/>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7039091592734005" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-78VZWJ5B1W"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-78VZWJ5B1W');</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"日本の手取り計算ツール","description":"日本の手取り額（所得税・復興特別所得税・住民税・社会保険料を含む）を計算するシミュレーターです。2026年版。","url":"https://japan-income-tax.tabutility.com/ja/","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","inLanguage":"ja","offers":{"@type":"Offer","price":"0","priceCurrency":"JPY"},"provider":{"@type":"Organization","name":"Tabutility","url":"https://tabutility.com"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Tabutility","item":"https://tabutility.com"},{"@type":"ListItem","position":2,"name":"海外・国際","item":"https://tabutility.com/#international"},{"@type":"ListItem","position":3,"name":"日本の手取り計算ツール","item":"https://japan-income-tax.tabutility.com/ja/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"この手取り計算ツールは2026年の税制に対応していますか？","acceptedAnswer":{"@type":"Answer","text":"はい。最新の所得税の税率区分、見直し後の給与所得控除（最低65万円）、基礎控除58万円、税率2.1%の復興特別所得税、および標準的な社会保険料率に基づいて計算しています。"}},{"@type":"Question","name":"社会保険料とは何ですか。いくらかかりますか？","acceptedAnswer":{"@type":"Answer","text":"社会保険料は加入が義務づけられている保険料です。従業員負担分は給与のおおむね14〜15%で、健康保険が約5%、厚生年金が9.15%、雇用保険が0.55%ほどです。40〜64歳の方はさらに介護保険料として約0.8%を負担します。"}},{"@type":"Question","name":"住民税はどのように計算されますか？","acceptedAnswer":{"@type":"Answer","text":"住民税は課税所得（基礎控除43万円を差し引いた後）のおよそ10%に、均等割として約5,000円を加えた金額です。前年の所得を基準に、翌年に課税される点に注意が必要です。"}},{"@type":"Question","name":"この計算ツールは無料ですか？","acceptedAnswer":{"@type":"Answer","text":"はい。完全に無料で、登録も不要です。年収を入力するだけで、税金・社会保険料・手取り額の内訳がすぐに表示されます。"}}]}</script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Hiragino Kaku Gothic ProN','Yu Gothic',Meiryo,sans-serif;background:#0f172a;color:#f1f5f9;min-height:100vh}
+nav{background:#1e293b;padding:12px 20px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #334155}
+nav a{color:#a5b4fc;text-decoration:none;font-size:14px;font-weight:600}
+.langswitch{max-width:700px;margin:8px auto 0;padding:0 16px;font-size:13px;color:#64748b}
+.langswitch a{color:#a5b4fc;text-decoration:none;font-weight:600}
+.langswitch span{color:#f1f5f9;font-weight:700}
+#app{max-width:700px;margin:8px auto;padding:24px 16px}
+h1{font-size:clamp(20px,4vw,30px);font-weight:800;margin-bottom:8px}
+.subtitle{color:#94a3b8;font-size:15px;margin-bottom:24px}
+.card{background:#1e293b;border:1px solid #334155;border-radius:14px;padding:22px;margin-bottom:18px}
+.card h2{font-size:15px;font-weight:700;color:#a5b4fc;margin-bottom:16px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.field label{display:block;font-size:11px;color:#94a3b8;margin-bottom:4px;font-weight:600;letter-spacing:.04em}
+.field input,.field select{width:100%;background:#0f172a;border:1px solid #475569;border-radius:8px;padding:10px 12px;color:#f1f5f9;font-size:15px;outline:none}
+.field input:focus,.field select:focus{border-color:#6366f1}
+.mode-toggle{display:flex;gap:8px;margin-bottom:16px;background:#0f172a;border-radius:10px;padding:4px}
+.mode-btn{flex:1;background:transparent;border:none;border-radius:8px;padding:9px 12px;font-size:13px;font-weight:700;color:#94a3b8;cursor:pointer}
+.mode-btn.active{background:#6366f1;color:#fff}
+.btn{width:100%;background:#6366f1;color:#fff;border:none;border-radius:10px;padding:13px;font-size:16px;font-weight:700;cursor:pointer;margin-top:6px}
+.btn:hover{background:#4f46e5}
+.result-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:16px}
+.result-box{background:#0f172a;border-radius:10px;padding:16px;text-align:center}
+.result-box .val{font-size:22px;font-weight:800;color:#34d399;margin-bottom:4px}
+.result-box .lbl{font-size:11px;color:#64748b;letter-spacing:.05em}
+.row{display:flex;justify-content:space-between;align-items:center;padding:9px 0;border-bottom:1px solid #334155}
+.row:last-child{border-bottom:none}
+.row .lbl{font-size:14px;color:#94a3b8}
+.row .lbl.sub{font-size:13px;color:#64748b;padding-left:14px}
+.row .val{font-size:15px;font-weight:700}
+.row .pctv{font-size:12px;color:#64748b;margin-left:8px}
+.note{background:#1e293b;border:1px solid #475569;border-radius:12px;padding:14px 18px;font-size:13px;color:#94a3b8;line-height:1.6;margin-bottom:18px}
+.seo{max-width:700px;margin:0 auto;padding:0 16px 24px;color:#cbd5e1;font-size:14px;line-height:1.7}
+.seo h2{font-size:18px;font-weight:700;color:#f1f5f9;margin:24px 0 10px}
+.seo p{margin-bottom:12px}
+.seo table{width:100%;border-collapse:collapse;font-size:13px;margin-bottom:12px}
+.seo th,.seo td{border:1px solid #334155;padding:8px 10px;text-align:left}
+.seo th{background:#1e293b;color:#a5b4fc}
+.faq{max-width:700px;margin:0 auto 24px;padding:0 16px}
+.faq h2{font-size:15px;font-weight:700;color:#94a3b8;letter-spacing:.05em;margin-bottom:14px}
+.faq .q{border-bottom:1px solid #334155;padding:14px 0}
+.faq .q:last-child{border-bottom:none}
+.faq .qq{font-size:14px;font-weight:600;color:#f1f5f9;margin-bottom:6px}
+.faq .qa{font-size:13px;color:#94a3b8;line-height:1.5}
+@media(max-width:520px){.grid{grid-template-columns:1fr}.result-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<nav><a href="https://tabutility.com">← Tabutility</a><span style="font-size:13px;color:#64748b">無料オンラインツール</span></nav>
+<div class="langswitch"><a href="https://japan-income-tax.tabutility.com/">English</a> | <span>日本語</span></div>
+<div style="text-align:center;padding:8px;background:inherit">
+  <ins class="adsbygoogle" style="display:block;min-height:90px" data-ad-client="ca-pub-7039091592734005" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+</div>
+<div id="app">
+  <h1>🇯🇵 手取り計算ツール 2026</h1>
+  <p class="subtitle">年収から手取り額を試算します。所得税・復興特別所得税・住民税・社会保険料を含めて自動で計算します。</p>
+
+  <div class="card">
+    <h2>入力項目</h2>
+    <div class="mode-toggle" role="tablist" aria-label="給与の入力方法">
+      <button type="button" id="mode-annual" class="mode-btn active" onclick="setMode('annual')">年収で入力</button>
+      <button type="button" id="mode-bonus" class="mode-btn" onclick="setMode('bonus')">月給＋賞与で入力</button>
+    </div>
+    <div class="grid" id="annual-inputs">
+      <div class="field">
+        <label for="salary">年収（額面・円）</label>
+        <input type="number" id="salary" value="6000000" min="0" step="100000"/>
+      </div>
+    </div>
+    <div class="grid" id="bonus-inputs" style="display:none">
+      <div class="field">
+        <label for="monthly-salary">月給（額面・円）</label>
+        <input type="number" id="monthly-salary" value="400000" min="0" step="10000"/>
+      </div>
+      <div class="field">
+        <label for="bonus-amount">賞与（1回あたり・円）</label>
+        <input type="number" id="bonus-amount" value="600000" min="0" step="50000"/>
+      </div>
+      <div class="field">
+        <label for="bonus-count">年間の賞与回数</label>
+        <select id="bonus-count">
+          <option value="0">なし</option>
+          <option value="1">1回（例：夏季）</option>
+          <option value="2" selected>2回（夏季＋冬季）</option>
+          <option value="3">3回</option>
+        </select>
+      </div>
+    </div>
+    <div class="grid" style="margin-top:12px">
+      <div class="field">
+        <label for="age">年齢区分</label>
+        <select id="age">
+          <option value="u40">40歳未満</option>
+          <option value="o40">40〜64歳（介護保険料あり）</option>
+          <option value="o65">65〜69歳</option>
+          <option value="o70">70歳以上</option>
+        </select>
+      </div>
+    </div>
+    <button class="btn" onclick="calc()">手取りを計算する</button>
+  </div>
+
+  <div class="card" id="results" style="display:none">
+    <h2>計算結果</h2>
+    <div class="result-grid">
+      <div class="result-box"><div class="val" id="r-takehome">—</div><div class="lbl">年間手取り</div></div>
+      <div class="result-box"><div class="val" id="r-monthly">—</div><div class="lbl" id="r-monthly-lbl">月間手取り</div></div>
+    </div>
+    <div class="result-grid" id="bonus-result-grid" style="display:none">
+      <div class="result-box"><div class="val" id="r-bonus-net">—</div><div class="lbl">賞与1回あたりの手取り</div></div>
+      <div class="result-box"><div class="val" id="r-bonus-month">—</div><div class="lbl">賞与月の手取り合計</div></div>
+    </div>
+    <div class="row"><span class="lbl">額面（総支給額）</span><span><span class="val" id="d-gross">—</span></span></div>
+    <div class="row"><span class="lbl">所得税</span><span><span class="val" style="color:#f87171" id="d-income">—</span><span class="pctv" id="p-income"></span></span></div>
+    <div class="row"><span class="lbl sub">復興特別所得税（2.1%）</span><span><span class="val" style="color:#f87171" id="d-surtax">—</span><span class="pctv" id="p-surtax"></span></span></div>
+    <div class="row"><span class="lbl">住民税</span><span><span class="val" style="color:#f87171" id="d-resident">—</span><span class="pctv" id="p-resident"></span></span></div>
+    <div class="row"><span class="lbl">社会保険料</span><span><span class="val" style="color:#fbbf24" id="d-social">—</span><span class="pctv" id="p-social"></span></span></div>
+    <div class="row"><span class="lbl sub">健康保険</span><span><span class="val" id="d-health">—</span></span></div>
+    <div class="row"><span class="lbl sub">厚生年金</span><span><span class="val" id="d-pension">—</span></span></div>
+    <div class="row"><span class="lbl sub">雇用保険</span><span><span class="val" id="d-emp">—</span></span></div>
+    <div class="row" id="care-row" style="display:none"><span class="lbl sub">介護保険</span><span><span class="val" id="d-care">—</span></span></div>
+    <div class="row"><span class="lbl">控除・保険料の合計</span><span><span class="val" style="color:#f87171" id="d-total">—</span><span class="pctv" id="p-total"></span></span></div>
+    <div class="row"><span class="lbl" style="color:#f1f5f9;font-weight:700">手取り額</span><span><span class="val" style="color:#34d399" id="d-net">—</span><span class="pctv" id="p-net"></span></span></div>
+  </div>
+
+  <div class="note"><strong>ご注意：</strong> 本ツールは最新の所得税率、基礎控除58万円、見直し後の給与所得控除、東京都（協会けんぽ）の標準的な社会保険料率を用いた概算です。実際の金額は、都道府県・加入する健康保険・扶養家族・各種控除によって変わります。住民税は前年の所得に基づいて課税されます。月給＋賞与モードでは、賞与にかかる社会保険料は賞与用の上限（健康保険・介護保険：年間573万円、厚生年金：1回あたり150万円）を用いており、実際の給与明細の計算方法に合わせています。個別のご相談は税理士にご確認ください。</div>
+</div>
+
+<div class="seo">
+  <h2>日本の所得税のしくみ（2026年）</h2>
+  <p>日本では給与所得に対して主に3種類の負担がかかります。まず<strong>所得税</strong>は、5%から45%までの累進課税です。税率を適用する前に、給与から<strong>給与所得控除</strong>（2025年以降は最低65万円）、支払った<strong>社会保険料</strong>、そして<strong>基礎控除</strong>58万円を差し引きます。さらに、2011年の東日本大震災からの復興財源として、2037年まで所得税額に対して2.1%の<strong>復興特別所得税</strong>が上乗せされます。</p>
+  <p>次に、<strong>住民税</strong>は都道府県および市区町村に納める税金です。課税所得（住民税ではやや低い基礎控除43万円で計算）のおよそ10%（所得割）に、均等割として約5,000円を加えた金額になります。重要な点として、住民税は<em>前年の所得に基づいて翌年に課税</em>されます。毎年6月から納める住民税は前年の収入が基準となるため、来日したばかりの方や退職・帰国する方が驚くことが多い仕組みです。</p>
+  <p>3つ目の<strong>社会保険料</strong>は、毎月の給与から差し引かれます。従業員負担分は額面のおおむね14〜15%で、健康保険が約5%、厚生年金が9.15%（標準報酬月額65万円が上限）、雇用保険が0.55%ほどです。40〜64歳の方はさらに、介護保険料として約0.8%を負担します。</p>
+  <h2>所得税の税率区分（2026年）</h2>
+  <table>
+    <tr><th>課税所得</th><th>税率</th><th>控除額</th></tr>
+    <tr><td>195万円以下</td><td>5%</td><td>—</td></tr>
+    <tr><td>195万1円〜330万円</td><td>10%</td><td>97,500円</td></tr>
+    <tr><td>330万1円〜695万円</td><td>20%</td><td>427,500円</td></tr>
+    <tr><td>695万1円〜900万円</td><td>23%</td><td>636,000円</td></tr>
+    <tr><td>900万1円〜1,800万円</td><td>33%</td><td>1,536,000円</td></tr>
+    <tr><td>1,800万1円〜4,000万円</td><td>40%</td><td>2,796,000円</td></tr>
+    <tr><td>4,000万円超</td><td>45%</td><td>4,796,000円</td></tr>
+  </table>
+  <h2>日本で働く外国人の方へのポイント</h2>
+  <p>日本で働く外国人の給与所得者の場合、勤務先が<strong>源泉徴収</strong>によって所得税と社会保険料を自動的に天引きし、多くの給与所得者は確定申告を行う必要がありません。過不足は<strong>年末調整</strong>で精算されます。年収が2,000万円を超える場合、副収入が多い場合、またはふるさと納税・医療費控除・住宅ローン控除などの控除を受けたい場合には、原則として<strong>確定申告</strong>（例年3月中旬が期限）が必要になります。</p>
+  <p>非永住者（過去10年のうち日本に住んでいた期間が5年以下の外国人）は、国内源泉所得と、日本に送金された国外所得のみが課税対象となります。海外へ定期的に送金する場合は、手数料の低いサービスを利用し、記録を残しておくことが大切です。年金の掛金は帰国しても無駄にはなりません。短期滞在の外国人労働者は、日本を離れた後、最大5年分の年金掛金に相当する<strong>脱退一時金</strong>を請求できます。社会保障協定を結んでいる国であれば、加入期間の通算を利用することもできます。</p>
+</div>
+
+<div class="faq">
+  <h2>よくあるご質問</h2>
+  <div class="q"><div class="qq">この手取り計算ツールは2026年の税制に対応していますか？</div><div class="qa">はい。最新の所得税の税率区分、見直し後の給与所得控除（最低65万円）、基礎控除58万円、税率2.1%の復興特別所得税、および標準的な社会保険料率に基づいて計算しています。</div></div>
+  <div class="q"><div class="qq">社会保険料とは何ですか。いくらかかりますか？</div><div class="qa">社会保険料は加入が義務づけられている保険料です。従業員負担分は給与のおおむね14〜15%で、健康保険が約5%、厚生年金が9.15%、雇用保険が0.55%ほどです。40〜64歳の方はさらに介護保険料として約0.8%を負担します。</div></div>
+  <div class="q"><div class="qq">住民税はどのように計算されますか？</div><div class="qa">住民税は課税所得（基礎控除43万円を差し引いた後）のおよそ10%に、均等割として約5,000円を加えた金額です。前年の所得を基準に、翌年に課税される点に注意が必要です。</div></div>
+  <div class="q"><div class="qq">この計算ツールは無料ですか？</div><div class="qa">はい。完全に無料で、登録も不要です。年収を入力するだけで、税金・社会保険料・手取り額の内訳がすぐに表示されます。</div></div>
+</div>
+
+
+<div style="margin:0 auto 24px;max-width:640px;background:#1e293b;border-radius:10px;padding:14px 18px;display:flex;align-items:center;gap:14px;border:1px solid #334155"><span style="font-size:24px">💸</span><div><strong style="color:#e2e8f0">日本への送金・日本からの送金をお考えですか？</strong><br><span style="color:#94a3b8;font-size:14px">Wiseなら、実際の為替レート（JPY）で、低く分かりやすい手数料で送金できます。</span><a href="https://wise.prf.hn/click/camref:1100l5Q6iR/pubref:japan-income-tax" target="_blank" rel="sponsored noopener" style="color:#38bdf8;font-weight:700">Wiseを試す →</a></div></div>
+
+<div style="margin:0 auto 24px;max-width:640px;background:#1e293b;border-radius:10px;padding:14px 18px;display:flex;align-items:center;gap:14px;cursor:pointer;border:1px solid #334155" onclick="window.open('https://www.amazon.co.jp/s?k=%E7%A8%8E%E9%87%91+%E6%9C%AC','_blank','noopener noreferrer')" title="税金についてもっと知りたい方へ">
+  <span style="font-size:28px;flex-shrink:0">📚</span>
+  <div style="min-width:0">
+    <div style="font-size:13px;font-weight:700;color:#f1f5f9;margin-bottom:3px">税金についてもっと知りたい方へ</div>
+    <div style="font-size:12px;color:#94a3b8">税金に関する本を探す <span style="color:#f59e0b;white-space:nowrap">→ Amazonで見る</span></div>
+    <div style="font-size:10px;color:#475569;margin-top:3px">Amazonのアソシエイトとして、当サイトは適格販売により収入を得ています。</div>
+  </div>
+</div>
+
+<h2 style="font-size:15px;font-weight:700;color:#94a3b8;letter-spacing:.05em;margin-bottom:14px;max-width:640px;margin-left:auto;margin-right:auto;padding:0 4px">関連ツール</h2>
+<div style="max-width:640px;margin:0 auto 32px;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;padding:0 4px">
+  <a href="https://japan-income-tax.tabutility.com/" style="display:block;background:rgba(30,41,59,1);border:1px solid rgba(255,255,255,0.12);border-radius:10px;padding:12px 16px;text-decoration:none;color:inherit">
+    <div style="font-size:13px;font-weight:600;color:#f1f5f9">Japan Income Tax Calculator（英語版）</div>
+    <div style="font-size:11px;color:#94a3b8;margin-top:2px">International</div>
+  </a>
+  <a href="https://currency-converter.tabutility.com/" style="display:block;background:rgba(30,41,59,1);border:1px solid rgba(255,255,255,0.12);border-radius:10px;padding:12px 16px;text-decoration:none;color:inherit">
+    <div style="font-size:13px;font-weight:600;color:#f1f5f9">通貨換算ツール</div>
+    <div style="font-size:11px;color:#94a3b8;margin-top:2px">Converters</div>
+  </a>
+  <a href="https://singapore-income-tax.tabutility.com/" style="display:block;background:rgba(30,41,59,1);border:1px solid rgba(255,255,255,0.12);border-radius:10px;padding:12px 16px;text-decoration:none;color:inherit">
+    <div style="font-size:13px;font-weight:600;color:#f1f5f9">Singapore Income Tax Calculator</div>
+    <div style="font-size:11px;color:#94a3b8;margin-top:2px">International</div>
+  </a>
+  <a href="https://germany-income-tax.tabutility.com/" style="display:block;background:rgba(30,41,59,1);border:1px solid rgba(255,255,255,0.12);border-radius:10px;padding:12px 16px;text-decoration:none;color:inherit">
+    <div style="font-size:13px;font-weight:600;color:#f1f5f9">Germany Income Tax Calculator</div>
+    <div style="font-size:11px;color:#94a3b8;margin-top:2px">International</div>
+  </a>
+</div>
+
+<div style="text-align:center;padding:8px;background:inherit">
+  <ins class="adsbygoogle" style="display:block;min-height:90px" data-ad-client="ca-pub-7039091592734005" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
+</div>
+
+<script>
+function yen(n){return '¥'+Math.round(n).toLocaleString('ja-JP');}
+function pc(n,g){return g>0?(n/g*100).toFixed(1)+'%':'0%';}
+
+// Employment income deduction — 2025 revision
+function employmentDeduction(gross){
+  if(gross<=1900000) return 650000;
+  if(gross<=3600000) return gross*0.30+80000;
+  if(gross<=6600000) return gross*0.20+440000;
+  if(gross<=8500000) return gross*0.10+1100000;
+  return 1950000;
+}
+
+// Basic deduction with high-income phase-out (2025: ¥580,000 national / ¥430,000 resident)
+function basicDeduction(netIncome,type){
+  // type 'national': ¥580,000 (2025 reform) up to ¥23.5M net income, then standard phase-out
+  // type 'resident': ¥430,000 up to ¥24M, phasing out above
+  if(type==='national'){
+    if(netIncome<=23500000) return 580000;
+    if(netIncome<=24000000) return 480000;
+    if(netIncome<=24500000) return 320000;
+    if(netIncome<=25000000) return 160000;
+    return 0;
+  }
+  if(netIncome<=24000000) return 430000;
+  if(netIncome<=24500000) return 290000;
+  if(netIncome<=25000000) return 150000;
+  return 0;
+}
+
+// National progressive tax
+function nationalTax(taxable){
+  if(taxable<=0) return 0;
+  if(taxable<=1950000) return taxable*0.05;
+  if(taxable<=3300000) return taxable*0.10-97500;
+  if(taxable<=6950000) return taxable*0.20-427500;
+  if(taxable<=9000000) return taxable*0.23-636000;
+  if(taxable<=18000000) return taxable*0.33-1536000;
+  if(taxable<=40000000) return taxable*0.40-2796000;
+  return taxable*0.45-4796000;
+}
+
+var inputMode='annual';
+function setMode(m){
+  inputMode=m;
+  document.getElementById('mode-annual').classList.toggle('active',m==='annual');
+  document.getElementById('mode-bonus').classList.toggle('active',m==='bonus');
+  document.getElementById('annual-inputs').style.display=(m==='annual')?'grid':'none';
+  document.getElementById('bonus-inputs').style.display=(m==='bonus')?'grid':'none';
+  calc();
+}
+
+function calc(){
+  var age=document.getElementById('age').value;
+  var gross,monthlyGross=0,bonusAmt=0,bonusCount=0,annualBonus=0;
+  if(inputMode==='bonus'){
+    monthlyGross=parseFloat(document.getElementById('monthly-salary').value)||0;
+    bonusAmt=parseFloat(document.getElementById('bonus-amount').value)||0;
+    bonusCount=parseInt(document.getElementById('bonus-count').value,10)||0;
+    annualBonus=bonusAmt*bonusCount;
+    gross=monthlyGross*12+annualBonus;
+  }else{
+    gross=parseFloat(document.getElementById('salary').value)||0;
+  }
+
+  // Social insurance (employee share), Tokyo Kyokai Kenpo approximations.
+  // Bonuses have their own caps: health/care bonus base capped at ¥5.73M per year;
+  // pension bonus base capped at ¥1.5M per bonus payment.
+  var health,care,pension,emp,social;
+  var bonusHealth=0,bonusCare=0,bonusPension=0,bonusEmp=0,bonusSocial=0;
+  if(inputMode==='bonus'){
+    var monthlyStd=Math.min(monthlyGross,1390000);            // std monthly remuneration cap
+    var salHealthBase=monthlyStd*12;
+    var salPensionBase=Math.min(monthlyGross,650000)*12;      // kosei nenkin std monthly cap ¥650,000
+    var bonusHealthBase=Math.min(annualBonus,5730000);        // annual bonus cap for health/care
+    var bonusPensionBase=Math.min(bonusAmt,1500000)*bonusCount; // per-payment pension cap ¥1.5M
+    health=salHealthBase*0.0499;
+    care=(age==='o40')?salHealthBase*0.008:0;
+    pension=(age==='o70')?0:salPensionBase*0.0915;
+    bonusHealth=bonusHealthBase*0.0499;
+    bonusCare=(age==='o40')?bonusHealthBase*0.008:0;
+    bonusPension=(age==='o70')?0:bonusPensionBase*0.0915;
+    emp=monthlyGross*12*0.0055;
+    bonusEmp=annualBonus*0.0055;
+    bonusSocial=bonusHealth+bonusCare+bonusPension+bonusEmp;
+    health+=bonusHealth;care+=bonusCare;pension+=bonusPension;emp+=bonusEmp;
+    social=health+care+pension+emp;
+  }else{
+    var healthBase=Math.min(gross,16680000);      // annual standard remuneration cap approx
+    var pensionBase=Math.min(gross,7800000);      // kosei nenkin cap: std monthly ¥650,000
+    health=healthBase*0.0499;                 // ~9.98%/2
+    care=(age==='o40')?healthBase*0.008:0;    // kaigo hoken 40–64, ~1.6%/2
+    pension=(age==='o70')?0:pensionBase*0.0915; // kosei nenkin applies until age 70
+    emp=gross*0.0055;
+    social=health+care+pension+emp;
+  }
+
+  // National income tax
+  var empDed=employmentDeduction(gross);
+  var netIncome=gross-empDed; // employment income after deduction
+  var taxableNational=Math.max(0,netIncome-social-basicDeduction(netIncome,'national'));
+  taxableNational=Math.floor(taxableNational/1000)*1000;
+  var incomeTax=Math.max(0,nationalTax(taxableNational));
+  var surtax=incomeTax*0.021;
+
+  // Resident tax (10% + per capita ~¥5,000), basic deduction ¥430,000 (phases out at high income)
+  var taxableResident=Math.max(0,netIncome-social-basicDeduction(netIncome,'resident'));
+  var resident=taxableResident>0?taxableResident*0.10+5000:0;
+
+  var total=incomeTax+surtax+resident+social;
+  var net=gross-total;
+
+  document.getElementById('r-takehome').textContent=yen(net);
+  if(inputMode==='bonus'&&bonusCount>0){
+    // Allocate income/resident tax proportionally to gross share (approximates payroll withholding)
+    var taxAll=incomeTax+surtax+resident;
+    var salaryShare=gross>0?(monthlyGross*12)/gross:0;
+    var regMonthNet=monthlyGross-(social-bonusSocial)/12-taxAll*salaryShare/12;
+    var perBonusNet=bonusAmt-(bonusCount>0?bonusSocial/bonusCount:0)-(gross>0?taxAll*(annualBonus/gross)/bonusCount:0);
+    document.getElementById('r-monthly').textContent=yen(regMonthNet);
+    document.getElementById('r-monthly-lbl').textContent='通常月の手取り';
+    document.getElementById('r-bonus-net').textContent=yen(perBonusNet);
+    document.getElementById('r-bonus-month').textContent=yen(regMonthNet+perBonusNet);
+    document.getElementById('bonus-result-grid').style.display='grid';
+  }else{
+    document.getElementById('r-monthly').textContent=yen(net/12);
+    document.getElementById('r-monthly-lbl').textContent='月間手取り';
+    document.getElementById('bonus-result-grid').style.display='none';
+  }
+  document.getElementById('d-gross').textContent=yen(gross);
+  document.getElementById('d-income').textContent=yen(incomeTax);
+  document.getElementById('p-income').textContent=pc(incomeTax,gross);
+  document.getElementById('d-surtax').textContent=yen(surtax);
+  document.getElementById('p-surtax').textContent=pc(surtax,gross);
+  document.getElementById('d-resident').textContent=yen(resident);
+  document.getElementById('p-resident').textContent=pc(resident,gross);
+  document.getElementById('d-social').textContent=yen(social);
+  document.getElementById('p-social').textContent=pc(social,gross);
+  document.getElementById('d-health').textContent=yen(health);
+  document.getElementById('d-pension').textContent=yen(pension);
+  document.getElementById('d-emp').textContent=yen(emp);
+  document.getElementById('care-row').style.display=(age==='o40')?'flex':'none';
+  document.getElementById('d-care').textContent=yen(care);
+  document.getElementById('d-total').textContent=yen(total);
+  document.getElementById('p-total').textContent=pc(total,gross);
+  document.getElementById('d-net').textContent=yen(net);
+  document.getElementById('p-net').textContent=pc(net,gross);
+  document.getElementById('results').style.display='block';
+}
+calc();
+</script>
+<script>
+(function(){
+  var ins=document.querySelectorAll('.adsbygoogle:not([data-lazy-done])');
+  var belowFold=Array.from(ins).slice(1);
+  if(!belowFold.length)return;
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(entries,obs){
+      entries.forEach(function(e){
+        if(e.isIntersecting){
+          (adsbygoogle=window.adsbygoogle||[]).push({});
+          e.target.setAttribute('data-lazy-done','1');
+          obs.unobserve(e.target);
+        }
+      });
+    },{rootMargin:'200px'});
+    belowFold.forEach(function(el){io.observe(el);});
+  } else {
+    belowFold.forEach(function(){(adsbygoogle=window.adsbygoogle||[]).push({});});
+  }
+})();
+</script>
+</body>
+</html>
