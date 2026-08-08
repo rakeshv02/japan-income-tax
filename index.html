@@ -3,7 +3,6 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap">
 <title>Japan Income Tax Calculator 2025 — Take-Home Pay, Shakai Hoken & Resident Tax | Tabutility</title>
 <meta name="description" content="Calculate your Japanese take-home pay for 2025. Includes national income tax, reconstruction surtax, resident tax (juminzei) and social insurance (shakai hoken) — free, no signup."/>
 <meta name="keywords" content="japan income tax calculator, japan salary calculator, take home pay japan, shakai hoken calculator, juminzei, japan tax 2025, expat japan salary, nenshu calculator"/>
@@ -18,7 +17,7 @@
 <meta name="twitter:description" content="Calculate your Japanese take-home pay for 2025. Includes national income tax, resident tax and social insurance — free, no signup."/>
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🇯🇵</text></svg>"/>
 <meta name="robots" content="index, follow"/>
-<meta name="theme-color" content="#f8f7f4"/>
+<meta name="theme-color" content="#0f172a"/>
 <link rel="alternate" hreflang="en" href="https://japan-income-tax.tabutility.com/"/>
 <link rel="alternate" hreflang="ja" href="https://japan-income-tax.tabutility.com/ja/"/>
 <link rel="alternate" hreflang="x-default" href="https://japan-income-tax.tabutility.com/"/>
@@ -30,59 +29,60 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is the Japan Income Tax Calculator up to date for 2025?","acceptedAnswer":{"@type":"Answer","text":"Yes — it uses the 2025 national income tax brackets, the revised ¥650,000 minimum employment income deduction, the ¥580,000 basic deduction, the 2.1% reconstruction surtax and standard social insurance rates."}},{"@type":"Question","name":"What is shakai hoken and how much does it cost?","acceptedAnswer":{"@type":"Answer","text":"Shakai hoken is Japan's mandatory social insurance. The employee share is roughly 14–15% of gross salary: about 5% for health insurance, 9.15% for pension (kosei nenkin) and 0.55% for employment insurance. Workers aged 40–64 also pay around 0.8% for nursing care insurance."}},{"@type":"Question","name":"How is resident tax (juminzei) calculated in Japan?","acceptedAnswer":{"@type":"Answer","text":"Resident tax is roughly 10% of your taxable income (after a ¥430,000 basic deduction) plus a small per-capita levy of about ¥5,000. It is billed a year in arrears, based on your previous year's income."}},{"@type":"Question","name":"Is the Japan Income Tax Calculator free?","acceptedAnswer":{"@type":"Answer","text":"Yes — completely free, no sign-up needed. Enter your annual salary and get an instant breakdown of tax, social insurance and take-home pay."}},{"@type":"Question","name":"How accurate is this calculator?","acceptedAnswer":{"@type":"Answer","text":"Results are based on official published 2025 rates and standard Tokyo social insurance premiums, and are accurate for estimation purposes. Actual figures vary by prefecture, health insurer and personal deductions. For personalised advice, consult a licensed zeirishi (tax accountant)."}}]}</script>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#f8f7f4;color:#0f172a;min-height:100vh}
-nav{background:#ffffff;padding:12px 20px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #e2e8f0}
+body{font-family:'Segoe UI',system-ui,Arial,sans-serif;background:#0f172a;color:#f1f5f9;min-height:100vh}
+nav{background:#1e293b;padding:12px 20px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #334155}
 nav a{color:#a5b4fc;text-decoration:none;font-size:14px;font-weight:600}
 #app{max-width:700px;margin:8px auto;padding:24px 16px}
 h1{font-size:clamp(20px,4vw,30px);font-weight:800;margin-bottom:8px}
-.subtitle{color:#64748b;font-size:15px;margin-bottom:24px}
-.card{background:#ffffff;border:1px solid #e2e8f0;border-radius:14px;padding:22px;margin-bottom:18px}
+.subtitle{color:#94a3b8;font-size:15px;margin-bottom:24px}
+.card{background:#1e293b;border:1px solid #334155;border-radius:14px;padding:22px;margin-bottom:18px}
 .card h2{font-size:15px;font-weight:700;color:#a5b4fc;margin-bottom:16px}
 .grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.field label{display:block;font-size:11px;color:#64748b;margin-bottom:4px;font-weight:600;text-transform:uppercase;letter-spacing:.04em}
-.field input,.field select{width:100%;background:#f8f7f4;border:1px solid #475569;border-radius:8px;padding:10px 12px;color:#0f172a;font-size:15px;outline:none}
+.field label{display:block;font-size:11px;color:#94a3b8;margin-bottom:4px;font-weight:600;text-transform:uppercase;letter-spacing:.04em}
+.field input,.field select{width:100%;background:#0f172a;border:1px solid #475569;border-radius:8px;padding:10px 12px;color:#f1f5f9;font-size:15px;outline:none}
 .field input:focus,.field select:focus{border-color:#6366f1}
-.mode-toggle{display:flex;gap:8px;margin-bottom:16px;background:#f8f7f4;border-radius:10px;padding:4px}
-.mode-btn{flex:1;background:transparent;border:none;border-radius:8px;padding:9px 12px;font-size:13px;font-weight:700;color:#64748b;cursor:pointer}
+.mode-toggle{display:flex;gap:8px;margin-bottom:16px;background:#0f172a;border-radius:10px;padding:4px}
+.mode-btn{flex:1;background:transparent;border:none;border-radius:8px;padding:9px 12px;font-size:13px;font-weight:700;color:#94a3b8;cursor:pointer}
 .mode-btn.active{background:#6366f1;color:#fff}
 .btn{width:100%;background:#6366f1;color:#fff;border:none;border-radius:10px;padding:13px;font-size:16px;font-weight:700;cursor:pointer;margin-top:6px}
 .btn:hover{background:#4f46e5}
 .result-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:16px}
-.result-box{background:#f8f7f4;border-radius:10px;padding:16px;text-align:center}
+.result-box{background:#0f172a;border-radius:10px;padding:16px;text-align:center}
 .result-box .val{font-size:22px;font-weight:800;color:#34d399;margin-bottom:4px}
 .result-box .lbl{font-size:11px;color:#64748b;text-transform:uppercase;letter-spacing:.05em}
-.row{display:flex;justify-content:space-between;align-items:center;padding:9px 0;border-bottom:1px solid #e2e8f0}
+.row{display:flex;justify-content:space-between;align-items:center;padding:9px 0;border-bottom:1px solid #334155}
 .row:last-child{border-bottom:none}
-.row .lbl{font-size:14px;color:#64748b}
+.row .lbl{font-size:14px;color:#94a3b8}
 .row .lbl.sub{font-size:13px;color:#64748b;padding-left:14px}
 .row .val{font-size:15px;font-weight:700}
 .row .pctv{font-size:12px;color:#64748b;margin-left:8px}
-.note{background:#ffffff;border:1px solid #475569;border-radius:12px;padding:14px 18px;font-size:13px;color:#64748b;line-height:1.6;margin-bottom:18px}
-.seo{max-width:700px;margin:0 auto;padding:0 16px 24px;color:#334155;font-size:14px;line-height:1.7}
-.seo h2{font-size:18px;font-weight:700;color:#0f172a;margin:24px 0 10px}
+.note{background:#1e293b;border:1px solid #475569;border-radius:12px;padding:14px 18px;font-size:13px;color:#94a3b8;line-height:1.6;margin-bottom:18px}
+.seo{max-width:700px;margin:0 auto;padding:0 16px 24px;color:#cbd5e1;font-size:14px;line-height:1.7}
+.seo h2{font-size:18px;font-weight:700;color:#f1f5f9;margin:24px 0 10px}
 .seo p{margin-bottom:12px}
 .seo table{width:100%;border-collapse:collapse;font-size:13px;margin-bottom:12px}
-.seo th,.seo td{border:1px solid #e2e8f0;padding:8px 10px;text-align:left}
-.seo th{background:#ffffff;color:#a5b4fc}
+.seo th,.seo td{border:1px solid #334155;padding:8px 10px;text-align:left}
+.seo th{background:#1e293b;color:#a5b4fc}
 .faq{max-width:700px;margin:0 auto 24px;padding:0 16px}
-.faq h2{font-size:15px;font-weight:700;color:#64748b;text-transform:uppercase;letter-spacing:.05em;margin-bottom:14px}
-.faq .q{border-bottom:1px solid #e2e8f0;padding:14px 0}
+.faq h2{font-size:15px;font-weight:700;color:#94a3b8;text-transform:uppercase;letter-spacing:.05em;margin-bottom:14px}
+.faq .q{border-bottom:1px solid #334155;padding:14px 0}
 .faq .q:last-child{border-bottom:none}
-.faq .qq{font-size:14px;font-weight:600;color:#0f172a;margin-bottom:6px}
-.faq .qa{font-size:13px;color:#64748b;line-height:1.5}
+.faq .qq{font-size:14px;font-weight:600;color:#f1f5f9;margin-bottom:6px}
+.faq .qa{font-size:13px;color:#94a3b8;line-height:1.5}
 @media(max-width:520px){.grid{grid-template-columns:1fr}.result-grid{grid-template-columns:1fr}}
 </style>
-<style id="tabutility-brand">
-/* empty ad slots: reserve space, no bordered box */
-.ad-banner,.ad-slot,.ad-container{background:transparent!important;border:none!important;border-bottom:none!important;box-shadow:none!important}
+<style id="tabutility-brand-v2">
+/* Canonical dark-surface spec (STYLE.md): indigo accent, white text on indigo */
+.btn,.toggle-btn.active,button.active{color:#fff!important}
+nav .brand{color:#fff}
+nav a:hover{color:#818cf8}
+input:focus,select:focus,textarea:focus{border-color:#818cf8!important}
 /* AdSense not yet approved: hide all ad frames (container min-height still reserves space). Remove these two lines after approval. */
 ins.adsbygoogle,.ad-banner iframe,.ad-slot iframe,.ad-container iframe{visibility:hidden!important}
-nav .brand{color:#0f172a}
-body{-webkit-font-smoothing:antialiased}
 </style>
 </head>
 <body>
-<nav><span class="brand" style="color:#0f172a;font-weight:700;font-size:18px">⚡ Tabutility</span><a href="https://tabutility.com">← All Tools</a></nav>
+<nav><a href="https://tabutility.com">← Tabutility</a><span style="font-size:13px;color:#64748b">Free online tools</span></nav>
 <div style="text-align:center;padding:8px;background:inherit">
   <ins class="adsbygoogle" style="display:block;min-height:90px" data-ad-client="ca-pub-7039091592734005" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
   <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
@@ -156,7 +156,7 @@ body{-webkit-font-smoothing:antialiased}
     <div class="row"><span class="lbl sub">Employment insurance</span><span><span class="val" id="d-emp">—</span></span></div>
     <div class="row" id="care-row" style="display:none"><span class="lbl sub">Nursing care insurance</span><span><span class="val" id="d-care">—</span></span></div>
     <div class="row"><span class="lbl">Total deductions</span><span><span class="val" style="color:#f87171" id="d-total">—</span><span class="pctv" id="p-total"></span></span></div>
-    <div class="row"><span class="lbl" style="color:#0f172a;font-weight:700">Take-home pay</span><span><span class="val" style="color:#34d399" id="d-net">—</span><span class="pctv" id="p-net"></span></span></div>
+    <div class="row"><span class="lbl" style="color:#f1f5f9;font-weight:700">Take-home pay</span><span><span class="val" style="color:#34d399" id="d-net">—</span><span class="pctv" id="p-net"></span></span></div>
   </div>
 
   <div class="note"><strong>Note:</strong> This is an estimate using 2025 national rates, the ¥580,000 basic deduction, the revised employment income deduction and typical Tokyo (Kyokai Kenpo) social insurance premiums. Actual amounts vary by prefecture, health insurer, dependents and personal deductions. Resident tax is billed on the previous year's income. In monthly + bonus mode, social insurance on bonuses uses the separate bonus caps (health/care: ¥5.73M per year; pension: ¥1.5M per payment), matching how real payslips are calculated. Consult a zeirishi (licensed tax accountant) for personalised advice.</div>
@@ -194,42 +194,42 @@ body{-webkit-font-smoothing:antialiased}
 
 
 <!-- embed-widget -->
-<div style="max-width:640px;margin:0 auto 32px;background:#ffffff;border:1px solid #e2e8f0;border-radius:12px;padding:18px">
-  <h2 style="font-size:15px;font-weight:700;color:#64748b;text-transform:uppercase;letter-spacing:.05em;margin-bottom:12px">Embed This Tool</h2>
+<div style="max-width:640px;margin:0 auto 32px;background:#1e293b;border:1px solid #334155;border-radius:12px;padding:18px">
+  <h2 style="font-size:15px;font-weight:700;color:#94a3b8;text-transform:uppercase;letter-spacing:.05em;margin-bottom:12px">Embed This Tool</h2>
   <p style="font-size:13px;color:#64748b;margin-bottom:12px">Add this Japan Income Tax Calculator to your website or blog for free — just paste this code:</p>
-  <div style="background:#f8f7f4;border:1px solid #e2e8f0;border-radius:8px;padding:12px;font-family:'Inter',monospace;font-size:12px;color:#7dd3fc;word-break:break-all;margin-bottom:10px" id="embed-code">&lt;iframe src=&quot;https://japan-income-tax.tabutility.com/&quot; width=&quot;100%&quot; height=&quot;600&quot; frameborder=&quot;0&quot; style=&quot;border-radius:12px&quot; title=&quot;Japan Income Tax Calculator by Tabutility&quot;&gt;&lt;/iframe&gt;
+  <div style="background:#0f172a;border:1px solid #334155;border-radius:8px;padding:12px;font-family:monospace;font-size:12px;color:#818cf8;word-break:break-all;margin-bottom:10px" id="embed-code">&lt;iframe src=&quot;https://japan-income-tax.tabutility.com/&quot; width=&quot;100%&quot; height=&quot;600&quot; frameborder=&quot;0&quot; style=&quot;border-radius:12px&quot; title=&quot;Japan Income Tax Calculator by Tabutility&quot;&gt;&lt;/iframe&gt;
 &lt;p style=&quot;font-size:12px&quot;&gt;&lt;a href=&quot;https://japan-income-tax.tabutility.com/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Japan Income Tax Calculator&lt;/a&gt; by &lt;a href=&quot;https://tabutility.com/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Tabutility&lt;/a&gt;&lt;/p&gt;</div>
-  <button onclick="navigator.clipboard.writeText(document.getElementById('embed-code').textContent).then(()=>{this.textContent='Copied!';setTimeout(()=>this.textContent='Copy Embed Code',2000)})" style="background:#0f172a;color:#f8f7f4;border:none;border-radius:8px;padding:9px 18px;font-size:13px;font-weight:700;cursor:pointer">Copy Embed Code</button>
+  <button onclick="navigator.clipboard.writeText(document.getElementById('embed-code').textContent).then(()=>{this.textContent='Copied!';setTimeout(()=>this.textContent='Copy Embed Code',2000)})" style="background:#4f46e5;color:#0f172a;border:none;border-radius:8px;padding:9px 18px;font-size:13px;font-weight:700;cursor:pointer">Copy Embed Code</button>
   <span style="font-size:11px;color:#475569;margin-left:12px">Free to use — the credit link helps others find the tool</span>
 </div>
-<div style="margin:0 auto 24px;max-width:640px;background:#ffffff;border-radius:10px;padding:14px 18px;display:flex;align-items:center;gap:14px;border:1px solid #e2e8f0"><span style="font-size:24px">💸</span><div><strong style="color:#e2e8f0">Sending money to or from Japan?</strong><br><span style="color:#64748b;font-size:14px">Wise gives you the real JPY exchange rate with low, transparent fees. </span><a href="https://wise.prf.hn/click/camref:1100l5Q6iR/pubref:japan-income-tax" target="_blank" rel="sponsored noopener" style="color:#0f172a;font-weight:700">Try Wise →</a></div></div>
+<div style="margin:0 auto 24px;max-width:640px;background:#1e293b;border-radius:10px;padding:14px 18px;display:flex;align-items:center;gap:14px;border:1px solid #334155"><span style="font-size:24px">💸</span><div><strong style="color:#e2e8f0">Sending money to or from Japan?</strong><br><span style="color:#94a3b8;font-size:14px">Wise gives you the real JPY exchange rate with low, transparent fees. </span><a href="https://wise.prf.hn/click/camref:1100l5Q6iR/pubref:japan-income-tax" target="_blank" rel="sponsored noopener" style="color:#4f46e5;font-weight:700">Try Wise →</a></div></div>
 
-<div style="margin:0 auto 24px;max-width:640px;background:#ffffff;border-radius:10px;padding:14px 18px;display:flex;align-items:center;gap:14px;cursor:pointer;border:1px solid #e2e8f0" onclick="window.open('https://www.amazon.com/s?k=Japan%20expat%20finance%20tax%20books&tag=tabutility-20','_blank','noopener noreferrer')" title="Living &amp; working in Japan?">
+<div style="margin:0 auto 24px;max-width:640px;background:#1e293b;border-radius:10px;padding:14px 18px;display:flex;align-items:center;gap:14px;cursor:pointer;border:1px solid #334155" onclick="window.open('https://www.amazon.com/s?k=Japan%20expat%20finance%20tax%20books&tag=tabutility-20','_blank','noopener noreferrer')" title="Living &amp; working in Japan?">
   <span style="font-size:28px;flex-shrink:0">📚</span>
   <div style="min-width:0">
-    <div style="font-size:13px;font-weight:700;color:#0f172a;margin-bottom:3px">Living &amp; working in Japan?</div>
-    <div style="font-size:12px;color:#64748b">Browse Japan expat &amp; finance books <span style="color:#f59e0b;white-space:nowrap">→ Browse on Amazon</span></div>
+    <div style="font-size:13px;font-weight:700;color:#f1f5f9;margin-bottom:3px">Living &amp; working in Japan?</div>
+    <div style="font-size:12px;color:#94a3b8">Browse Japan expat &amp; finance books <span style="color:#f59e0b;white-space:nowrap">→ Browse on Amazon</span></div>
     <div style="font-size:10px;color:#475569;margin-top:3px">As an Amazon Associate we earn from qualifying purchases.</div>
   </div>
 </div>
 
-<h2 style="font-size:15px;font-weight:700;color:#64748b;text-transform:uppercase;letter-spacing:.05em;margin-bottom:14px;max-width:640px;margin-left:auto;margin-right:auto;padding:0 4px">Related Tools</h2>
+<h2 style="font-size:15px;font-weight:700;color:#94a3b8;text-transform:uppercase;letter-spacing:.05em;margin-bottom:14px;max-width:640px;margin-left:auto;margin-right:auto;padding:0 4px">Related Tools</h2>
 <div style="max-width:640px;margin:0 auto 32px;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;padding:0 4px">
-  <a href="https://singapore-income-tax.tabutility.com/" style="display:block;background:#ffffff;border:1px solid #e2e8f0;border-radius:10px;padding:12px 16px;text-decoration:none;color:inherit">
-    <div style="font-size:13px;font-weight:600;color:#0f172a">Singapore Income Tax Calculator</div>
-    <div style="font-size:11px;color:#64748b;margin-top:2px">International</div>
+  <a href="https://singapore-income-tax.tabutility.com/" style="display:block;background:rgba(30,41,59,1);border:1px solid rgba(255,255,255,0.12);border-radius:10px;padding:12px 16px;text-decoration:none;color:inherit">
+    <div style="font-size:13px;font-weight:600;color:#f1f5f9">Singapore Income Tax Calculator</div>
+    <div style="font-size:11px;color:#94a3b8;margin-top:2px">International</div>
   </a>
-  <a href="https://germany-income-tax.tabutility.com/" style="display:block;background:#ffffff;border:1px solid #e2e8f0;border-radius:10px;padding:12px 16px;text-decoration:none;color:inherit">
-    <div style="font-size:13px;font-weight:600;color:#0f172a">Germany Income Tax Calculator</div>
-    <div style="font-size:11px;color:#64748b;margin-top:2px">International</div>
+  <a href="https://germany-income-tax.tabutility.com/" style="display:block;background:rgba(30,41,59,1);border:1px solid rgba(255,255,255,0.12);border-radius:10px;padding:12px 16px;text-decoration:none;color:inherit">
+    <div style="font-size:13px;font-weight:600;color:#f1f5f9">Germany Income Tax Calculator</div>
+    <div style="font-size:11px;color:#94a3b8;margin-top:2px">International</div>
   </a>
-  <a href="https://nz-income-tax.tabutility.com/" style="display:block;background:#ffffff;border:1px solid #e2e8f0;border-radius:10px;padding:12px 16px;text-decoration:none;color:inherit">
-    <div style="font-size:13px;font-weight:600;color:#0f172a">New Zealand Income Tax Calculator</div>
-    <div style="font-size:11px;color:#64748b;margin-top:2px">International</div>
+  <a href="https://nz-income-tax.tabutility.com/" style="display:block;background:rgba(30,41,59,1);border:1px solid rgba(255,255,255,0.12);border-radius:10px;padding:12px 16px;text-decoration:none;color:inherit">
+    <div style="font-size:13px;font-weight:600;color:#f1f5f9">New Zealand Income Tax Calculator</div>
+    <div style="font-size:11px;color:#94a3b8;margin-top:2px">International</div>
   </a>
-  <a href="https://currency-converter.tabutility.com/" style="display:block;background:#ffffff;border:1px solid #e2e8f0;border-radius:10px;padding:12px 16px;text-decoration:none;color:inherit">
-    <div style="font-size:13px;font-weight:600;color:#0f172a">Currency Converter</div>
-    <div style="font-size:11px;color:#64748b;margin-top:2px">Converters</div>
+  <a href="https://currency-converter.tabutility.com/" style="display:block;background:rgba(30,41,59,1);border:1px solid rgba(255,255,255,0.12);border-radius:10px;padding:12px 16px;text-decoration:none;color:inherit">
+    <div style="font-size:13px;font-weight:600;color:#f1f5f9">Currency Converter</div>
+    <div style="font-size:11px;color:#94a3b8;margin-top:2px">Converters</div>
   </a>
 </div>
 
@@ -409,11 +409,11 @@ calc();
   }
 })();
 </script>
-<footer style="border-top:1px solid #e2e8f0;background:#ffffff;margin-top:48px;padding:28px 24px;text-align:center;font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:13px;color:#64748b;line-height:1.8">
-<div style="font-weight:700;color:#0f172a;font-size:15px">⚡ Tabutility</div>
+<footer style="background:#1a1a2e;margin-top:48px;padding:28px 24px;text-align:center;font-family:'Segoe UI',system-ui,Arial,sans-serif;font-size:13px;color:#94a3b8;line-height:1.8">
+<div style="font-weight:700;color:#fff;font-size:15px">⚡ Tabutility</div>
 <div>Free, private, browser-based tools. No sign-up, no tracking.</div>
-<div><a href="https://tabutility.com" style="color:#0f172a;font-weight:600;text-decoration:none">All Tools</a> · <a href="https://tabutility.com/blog/" style="color:#64748b;text-decoration:none">Blog</a> · <a href="https://tabutility.com/#about" style="color:#64748b;text-decoration:none">About</a></div>
-<div style="margin-top:6px;color:#94a3b8">© 2026 Tabutility</div>
+<div><a href="https://tabutility.com" style="color:#818cf8;font-weight:600;text-decoration:none">All Tools</a> · <a href="https://tabutility.com/blog/" style="color:#94a3b8;text-decoration:none">Blog</a> · <a href="https://tabutility.com/#about" style="color:#94a3b8;text-decoration:none">About</a></div>
+<div style="margin-top:6px;color:#64748b">© 2026 Tabutility</div>
 </footer>
 </body>
 </html>
